@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Campo, Label, Select, InputRadio } from './styles';
+import { Campo, Label, Select, InputRadio, Boton } from './styles';
 
 const Form = () => {
    return (
@@ -49,7 +49,7 @@ const Form = () => {
                value="completo"
             />Completo
          </Campo>
-         <button type="button">Cotizar</button>
+         <Boton type="button">Cotizar</Boton>
       </form>
    )
 }
