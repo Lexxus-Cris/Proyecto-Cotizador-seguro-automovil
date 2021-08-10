@@ -1,18 +1,11 @@
 import React, { Fragment } from 'react';
-import styled from '@emotion/styled';
 
-import Header from './components/Header';
-import Form from './components/Form';
+import { Contenedor, ContenedorForm } from './styles';
 
-const Contenedor = styled.div`
-   max-width: 600px;
-   margin: 0 auto;
-`
+import Header from './components/Header/Header';
+import Form from './components/Form/Form';
 
-const ContenedorForm = styled.div`
-   background-color: #FFF;
-   padding: 3rem;
-`
+
 
 const App = () => {
    return (

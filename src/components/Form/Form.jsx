@@ -1,21 +1,23 @@
-import React from 'react'
+import React from 'react';
+
+import { Campo, Label, Select, InputRadio } from './styles';
 
 const Form = () => {
    return (
       <form>
-         <div>
-            <label htmlFor="">Marca</label>
-            <select name="marca" id="">
+         <Campo>
+            <Label htmlFor="">Marca</Label>
+            <Select name="marca" id="">
                <option value="">-- Seleccione la marca del auto --</option>
                <option value="mercedesbenz">Mercedes-Benz</option>
                <option value="mini">Mini</option>
                <option value="chevrolet">Chevrolet</option>
                <option value="hyundai">Hyundai</option>
-            </select>
-         </div>
-         <div>
-            <label htmlFor="">Año</label>
-            <select name="modelo" id="">
+            </Select>
+         </Campo>
+         <Campo>
+            <Label htmlFor="">Año</Label>
+            <Select name="modelo" id="">
                <option value="">-- Seleccione el modelo --</option>
                <option value="2021">2021</option>
                <option value="2020">2020</option>
@@ -27,27 +29,27 @@ const Form = () => {
                <option value="2014">2014</option>
                <option value="2013">2013</option>
                <option value="2012">2012</option>
-            </select>
-         </div>
-         <div>
-            <label htmlFor="">Plan</label>
-            <input
+            </Select>
+         </Campo>
+         <Campo>
+            <Label htmlFor="">Plan</Label>
+            <InputRadio
                type="radio"
                name="plan"
                value="basico"
             /> Básico
-            <input
+            <InputRadio
                type="radio"
                name="plan"
                value="intermedio"
             />Intermedio
-            <input
+            <InputRadio
                type="radio"
                name="plan"
                value="completo"
             />Completo
-            <button type="button">Cotizar</button>
-         </div>
+         </Campo>
+         <button type="button">Cotizar</button>
       </form>
    )
 }
