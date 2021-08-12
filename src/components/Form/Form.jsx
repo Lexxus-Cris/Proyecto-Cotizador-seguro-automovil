@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 
-import { Campo, Label, Select, InputRadio, Boton } from './styles';
+import { Campo, Label, Select, InputRadio, Boton, Error } from './styles';
 
 const Form = () => {
 
+   // Estado 
    const [ datos, setDatos ] = useState({
       marca : '',
       modelo : '',
       plan : ''
    });
+   // Estado de error
+   const [error, setError] = useState(false)
 
    // extraer valores
 
-   const { marca, year, plan } = datos;
+   const { marca, modelo, plan } = datos;
 
    // leer datos del formulario y los guardamos en el state
    const guardarDatos = e => {
@@ -22,8 +25,43 @@ const Form = () => {
       })
    }
 
+   // Cuando el usuario presiona el boton enviar
+   const handleSubmit = e => {
+      e.preventDefault()
+      if (marca.trim() === '' || modelo.trim() === '' || plan.trim() === '' ) {
+         setError(true);
+         return
+      }
+
+      setError(false);
+
+      // obtener la diferencia de anios
+
+      // por cada anio hay que restar el 3% del valor
+
+      // mercedesbenz 50%
+
+      // mini 30%
+
+      // chevrolet 15%
+
+      // hyundai 5%
+
+      // Basico aumenta 20%
+
+      // Intermedio  aumenta 35%
+
+      // Completo aumenta 50%
+
+      // total
+      
+   }
+
    return (
-      <form>
+      <form
+         onSubmit={handleSubmit}
+      >
+         {error ? <Error>Todos los campos son obligatorios</Error> : null}
          <Campo>
             <Label htmlFor="">Marca</Label>
             <Select
@@ -42,7 +80,7 @@ const Form = () => {
             <Label htmlFor="">Año</Label>
             <Select
                name="modelo"
-               value={year}
+               value={modelo}
                onChange={guardarDatos}
             >
                <option value="">-- Seleccione el modelo --</option>
@@ -82,7 +120,7 @@ const Form = () => {
                onChange={guardarDatos}
             />Completo
          </Campo>
-         <Boton type="button">Cotizar</Boton>
+         <Boton type="submit">Cotizar</Boton>
       </form>
    )
 }
