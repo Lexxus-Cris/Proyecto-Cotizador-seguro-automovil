@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Campo, Label, Select, InputRadio, Boton } from './styles';
 
 const Form = () => {
+
+   const [ datos, setDatos ] = useState({
+      marca : '',
+      modelo : '',
+      plan : ''
+   });
+
+   // extraer valores
+
+   const { marca, year, plan } = datos;
+
+   // leer datos del formulario y los guardamos en el state
+   const guardarDatos = e => {
+      setDatos({
+         ...datos,
+         [e.target.name] : e.target.value 
+      })
+   }
+
    return (
       <form>
          <Campo>
             <Label htmlFor="">Marca</Label>
-            <Select name="marca" id="">
+            <Select
+               name="marca"
+               value = {marca}
+               onChange = {guardarDatos}
+            >
                <option value="">-- Seleccione la marca del auto --</option>
                <option value="mercedesbenz">Mercedes-Benz</option>
                <option value="mini">Mini</option>
@@ -17,7 +40,11 @@ const Form = () => {
          </Campo>
          <Campo>
             <Label htmlFor="">Año</Label>
-            <Select name="modelo" id="">
+            <Select
+               name="modelo"
+               value={year}
+               onChange={guardarDatos}
+            >
                <option value="">-- Seleccione el modelo --</option>
                <option value="2021">2021</option>
                <option value="2020">2020</option>
@@ -37,16 +64,22 @@ const Form = () => {
                type="radio"
                name="plan"
                value="basico"
+               checked={plan === "basico"}
+               onChange={guardarDatos}
             /> Básico
             <InputRadio
                type="radio"
                name="plan"
                value="intermedio"
+               checked={plan === "intermedio"}
+               onChange={guardarDatos}
             />Intermedio
             <InputRadio
                type="radio"
                name="plan"
                value="completo"
+               checked={plan === "completo"}
+               onChange={guardarDatos}
             />Completo
          </Campo>
          <Boton type="button">Cotizar</Boton>
