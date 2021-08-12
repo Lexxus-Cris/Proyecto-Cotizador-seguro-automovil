@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { Campo, Label, Select, InputRadio, Boton, Error } from './styles';
 
+import { getDifferenceYear } from '../../helper'
+
 const Form = () => {
 
    // Estado 
@@ -35,18 +37,25 @@ const Form = () => {
 
       setError(false);
 
+      // Precio base del seguro 
+      let precioBase = 2500;
+
       // obtener la diferencia de anios
+      const diferencia =  getDifferenceYear(modelo);
 
       // por cada anio hay que restar el 3% del valor
+      precioBase -= ((diferencia * 3) * precioBase) / 100;
+      console.log(precioBase);
 
-      // mercedesbenz 50%
-
-      // mini 30%
-
-      // chevrolet 15%
-
+      
       // hyundai 5%
-
+      
+      // chevrolet 15%
+      
+      // mini 30%
+      
+      // mercedesbenz 50%
+      
       // Basico aumenta 20%
 
       // Intermedio  aumenta 35%
@@ -54,7 +63,7 @@ const Form = () => {
       // Completo aumenta 50%
 
       // total
-      
+
    }
 
    return (
