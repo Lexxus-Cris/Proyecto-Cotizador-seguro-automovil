@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Campo, Label, Select, InputRadio, Boton, Error } from './styles';
 
-import { getDifferenceYear } from '../../helper'
+import { getDifferenceYear, calcularMarca } from '../../helper'
 
 const Form = () => {
 
@@ -49,17 +49,14 @@ const Form = () => {
 
       
       // hyundai 5%
-      
       // chevrolet 15%
-      
       // mini 30%
-      
       // mercedesbenz 50%
-      
+      const resultado = calcularMarca(marca) * precioBase;
+      console.log(resultado);
+
       // Basico aumenta 20%
-
       // Intermedio  aumenta 35%
-
       // Completo aumenta 50%
 
       // total
