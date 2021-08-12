@@ -26,3 +26,14 @@ export function calcularMarca(marca) {
    }
    return incremento;
 }
+
+//Calcular el tipo de plan
+
+export function obtenerPlan(plan) {
+   if (plan === 'basico') {
+      return 1.20;
+   } else if (plan === 'intermedio') {
+      return 1.35;
+   }
+   return 1.50;
+}

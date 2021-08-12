@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Campo, Label, Select, InputRadio, Boton, Error } from './styles';
 
-import { getDifferenceYear, calcularMarca } from '../../helper'
+import { getDifferenceYear, calcularMarca, obtenerPlan } from '../../helper'
 
 const Form = () => {
 
@@ -52,15 +52,17 @@ const Form = () => {
       // chevrolet 15%
       // mini 30%
       // mercedesbenz 50%
-      const resultado = calcularMarca(marca) * precioBase;
+      let resultado = calcularMarca(marca) * precioBase;
       console.log(resultado);
 
       // Basico aumenta 20%
       // Intermedio  aumenta 35%
       // Completo aumenta 50%
-
+      const incrementoPlan = obtenerPlan(plan);
+      resultado = parseFloat(incrementoPlan * resultado).toFixed(2);
       // total
 
+      console.log(resultado);
    }
 
    return (
@@ -90,6 +92,7 @@ const Form = () => {
                onChange={guardarDatos}
             >
                <option value="">-- Seleccione el modelo --</option>
+               <option value="2022">2022</option>
                <option value="2021">2021</option>
                <option value="2020">2020</option>
                <option value="2019">2019</option>
