@@ -37,3 +37,8 @@ export function obtenerPlan(plan) {
    }
    return 1.50;
 }
+
+// Muesstra la primer letra mayuscula
+export function primerMayuscula(texto) {
+   return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
