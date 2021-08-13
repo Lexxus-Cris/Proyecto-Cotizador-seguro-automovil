@@ -4,7 +4,7 @@ import { Campo, Label, Select, InputRadio, Boton, Error } from './styles';
 
 import { getDifferenceYear, calcularMarca, obtenerPlan } from '../../helper'
 
-const Form = () => {
+const Form = ({guardarResumen}) => {
 
    // Estado 
    const [ datos, setDatos ] = useState({
@@ -62,7 +62,10 @@ const Form = () => {
       resultado = parseFloat(incrementoPlan * resultado).toFixed(2);
       // total
 
-      console.log(resultado);
+      guardarResumen({
+         cotizacion: resultado,
+         datos
+      })
    }
 
    return (
