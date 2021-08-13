@@ -1,4 +1,8 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+
+import { ContenedorResumen } from './styles';
+
+import { primerMayuscula } from '../../helper';
 
 const Resumen = ({datos}) => {
 
@@ -11,14 +15,14 @@ const Resumen = ({datos}) => {
    };
 
    return (
-      <Fragment>
+      <ContenedorResumen>
          <h2>Resumen de cotizacion</h2>
          <ul>
-            <li>Marca: </li>
-            <li>Modelo: </li>
-            <li>Plan: </li>
+            <li>Marca: {primerMayuscula(marca)}</li>
+            <li>Modelo: {modelo}</li>
+            <li>Plan: {primerMayuscula(plan)}</li>
          </ul>
-      </Fragment>
+      </ContenedorResumen>
    )
 }
 
