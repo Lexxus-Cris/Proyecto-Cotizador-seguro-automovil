@@ -18,7 +18,7 @@ export function calcularMarca(marca) {
       case 'mini':
          incremento = 1.30;
          break;
-      case 'mercedesbenz':
+      case 'mercedes-benz':
          incremento = 1.50;
          break;
       default:

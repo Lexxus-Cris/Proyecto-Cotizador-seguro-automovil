@@ -83,7 +83,7 @@ const Form = ({guardarResumen}) => {
                <option value="">-- Seleccione la marca del auto --</option>
                <option value="mercedes-benz">Mercedes-Benz</option>
                <option value="mini">Mini</option>
-               <option value="mhevrolet">Chevrolet</option>
+               <option value="chevrolet">Chevrolet</option>
                <option value="hyundai">Hyundai</option>
             </Select>
          </Campo>
