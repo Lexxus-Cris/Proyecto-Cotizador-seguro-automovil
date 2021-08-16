@@ -13,6 +13,7 @@ export const ResultadoCotizacion = styled.div`
    border: 1px solid #26C6DA;
    background-color:  rgb(127, 224, 237);
    position: relative;
+   margin-top: 1rem;
 `
 
 export const TextoCotizacion = styled.p`

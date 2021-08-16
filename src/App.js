@@ -33,11 +33,11 @@ const App = () => {
                <Form 
                   guardarResumen={setResumen}
                />
-               <Resultado 
-               cotizacion={cotizacion}
-               />
                <Resumen
                   datos={datos}
+               />
+               <Resultado 
+               cotizacion={cotizacion}
                />
             </ContenedorForm>
          </Contenedor>
