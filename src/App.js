@@ -20,8 +20,8 @@ const App = () => {
       }
    });
 
-   // extraer datos
-   const { datos } = resumen;
+   // extraer datos y cotizacion
+   const { datos, cotizacion } = resumen;
    
    return (
       <Fragment>
@@ -32,6 +32,9 @@ const App = () => {
             <ContenedorForm>
                <Form 
                   guardarResumen={setResumen}
+               />
+               <Resultado 
+               cotizacion={cotizacion}
                />
                <Resumen
                   datos={datos}

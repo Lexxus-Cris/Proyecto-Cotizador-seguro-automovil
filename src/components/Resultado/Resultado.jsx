@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-const Resultado = () => {
+import { Mensaje, ResultadoCotizacion, TextoCotizacion } from './styles';
+
+const Resultado = ({cotizacion}) => {
    return (
-      <div>
-      </div>
+      (cotizacion === 0 ) 
+         ? <Mensaje>Elige marca, año y tipo de seguro</Mensaje> 
+         : (
+            <ResultadoCotizacion>
+               <TextoCotizacion>El total es: $ {cotizacion}</TextoCotizacion>
+            </ResultadoCotizacion>
+         )
    )
 }
 
