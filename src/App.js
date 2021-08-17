@@ -7,10 +7,9 @@ import Form from './components/Form/Form';
 import Resumen from './components/Resumen/Resumen';
 import Resultado from './components/Resultado/Resultado';
 
-
-
 const App = () => {
-   
+
+   // state en donde guardaremos el resumen de la cotizacion
    const [ resumen, setResumen ] = useState({
       cotizacion: 0,
       datos: {
@@ -22,7 +21,7 @@ const App = () => {
 
    // extraer datos y cotizacion
    const { datos, cotizacion } = resumen;
-   
+
    return (
       <Fragment>
          <Contenedor>
