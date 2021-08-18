@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Form from './components/Form/Form';
 import Resumen from './components/Resumen/Resumen';
 import Resultado from './components/Resultado/Resultado';
+import Spinner from './components/Spinner/Spinner';
 
 const App = () => {
 
@@ -19,6 +20,8 @@ const App = () => {
       }
    });
 
+   const [ spinner, setSpinner ] = useState(false);
+
    // extraer datos y cotizacion
    const { datos, cotizacion } = resumen;
 
@@ -31,13 +34,20 @@ const App = () => {
             <ContenedorForm>
                <Form 
                   guardarResumen={setResumen}
+                  setSpinner={setSpinner}
                />
+               { spinner ? <Spinner /> : null }
+               
                <Resumen
                   datos={datos}
                />
-               <Resultado 
-               cotizacion={cotizacion}
-               />
+               { !spinner 
+                  ?
+                  <Resultado 
+                  cotizacion={cotizacion}
+                  />
+                  : null
+               }
             </ContenedorForm>
          </Contenedor>
       </Fragment>

@@ -4,7 +4,7 @@ import { Campo, Label, Select, InputRadio, Boton, Error } from './styles';
 
 import { getDifferenceYear, calcularMarca, obtenerPlan } from '../../helper'
 
-const Form = ({guardarResumen}) => {
+const Form = ({guardarResumen, setSpinner}) => {
 
    // Estado 
    const [ datos, setDatos ] = useState({
@@ -62,10 +62,21 @@ const Form = ({guardarResumen}) => {
       resultado = parseFloat(incrementoPlan * resultado).toFixed(2);
       // total
 
-      guardarResumen({
-         cotizacion: resultado,
-         datos
-      })
+      setSpinner(true);
+
+      setTimeout(() => {
+
+         // Elimina el spinner
+         setSpinner(false);
+
+         // Pasa la informacion al componente
+         guardarResumen({
+            cotizacion: resultado,
+            datos
+         })
+      }, 3000);
+
+      
    }
 
    return (
